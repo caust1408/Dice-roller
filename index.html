@@ -1,0 +1,52 @@
+<!-- Program to choose a random student from one class of several
+
+	Brian Capouch
+	4 February 2015
+
+-->
+
+  <!-- Use jQuery from a CDN -->                      
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <title>Pick-a-kid Chooser</title>
+</head>
+<body>
+    <h3>CS Student Random Picker</h3>
+    <div></div>
+    <input type="button" onclick="chooseOne('click')" value="click"/>
+    <!--input type="button" onclick="chooseOne('cmp344')" value="CMP344"/-->
+    <!--input type="button" onClick="chooseOne('cmp341')" value="CMP341"/-->
+    <!--input type="button" onclick="chooseOne('cmp112')" value="CMP112"/-->
+    <script>
+    // Brian Capouch, ready to retire the old hat
+    // Choose a random student from a given class	
+
+    // Course rosters object
+    // Note: It's an array of objects, each of which is a map
+    //		and the value for each map is an array of names
+
+    var courses = { "click": ['1', '2', '3', '4', '5', '6']} 
+
+    function chooseOne(course) {
+
+      // Choose appropriate element from courses array
+      var thisClass = courses[course];
+
+      // We'll choose one of n; this sets n
+      var n = thisClass.length;
+
+      // Pick one at random
+      var which = Math.floor(Math.random() * n);
+
+      // Set string with value of result
+      var result = 'Die #1: ' + thisClass[which];
+
+      // Clear out the div, and then fill it with fresh
+      // This is the wonderful, invisible work of jQuery
+      $('#output').empty(); 
+      $('#output').append('<pre>' + result + '</pre>');
+      }
+  </script>
+<div id="output"></div>
+</body>
+</html>
