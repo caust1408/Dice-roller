@@ -13,8 +13,8 @@
 <body>
     <h3>CS Student Random Picker</h3>
     <div></div>
-    <input type="button" onclick="chooseOne('click')" value="click"/>
-    <!--input type="button" onclick="chooseOne('cmp344')" value="CMP344"/-->
+    <input type="button" onclick="die1('click1')" value="click1"/>
+    <input type="button" onclick="die2('click2')" value="click2"/>
     <!--input type="button" onClick="chooseOne('cmp341')" value="CMP341"/-->
     <!--input type="button" onclick="chooseOne('cmp112')" value="CMP112"/-->
     <script>
@@ -25,28 +25,52 @@
     // Note: It's an array of objects, each of which is a map
     //		and the value for each map is an array of names
 
-    var courses = { "click": ['1', '2', '3', '4', '5', '6']} 
+    var die1nums = { "click1": ['1', '2', '3', '4', '5', '6']} 
 
-    function chooseOne(course) {
+    function die1(num1) {
 
       // Choose appropriate element from courses array
-      var thisClass = courses[course];
+      var thisRoll1 = die1nums[num1];
 
       // We'll choose one of n; this sets n
-      var n = thisClass.length;
+      var n1 = thisRoll1.length;
 
       // Pick one at random
-      var which = Math.floor(Math.random() * n);
+      var which1 = Math.floor(Math.random() * n1);
 
       // Set string with value of result
-      var result = 'Die #1: ' + thisClass[which];
+      var result1 = 'click1: ' + thisRoll1[which1];
 
       // Clear out the div, and then fill it with fresh
       // This is the wonderful, invisible work of jQuery
-      $('#output').empty(); 
-      $('#output').append('<pre>' + result + '</pre>');
+        $('#output').empty(); 
+        $('#output').append('<pre>' + result1 + '</pre>');
+      
+	}
+    var die2nums = { "click2": ['1', '2', '3', '4', '5', '6']} 
+
+    function die2(num2) {
+
+      // Choose appropriate element from courses array
+      var thisRoll2 = die2nums[num2];
+
+      // We'll choose one of n; this sets n
+      var n2 = thisRoll2.length;
+
+      // Pick one at random
+      var which2 = Math.floor(Math.random() * n2);
+
+      // Set string with value of result
+      var result2 = 'click2: ' + thisRoll2[which2];
+
+      // Clear out the div, and then fill it with fresh
+      // This is the wonderful, invisible work of jQuery
+      $('#output2').empty();
+      $('#output2').append('<pre>' + result2 + '</pre>');
       }
+      
   </script>
 <div id="output"></div>
+<div id="output2"></div>
 </body>
 </html>
